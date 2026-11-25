@@ -1,0 +1,311 @@
+FastCopy Mint 0.2.8+static1 — release validation
+Debian 13, GCC 14.2, Tk/Xvfb; actual Mint desktops not tested.
+
+The previous Source label was present in the code; the footer layout now reserves its full requested width and height. The destination New Folder button is on the header row. Only the version banner changes in engine.cpp; original src/ and rc_layout.json match 0.2.7 byte for byte.
+
+=== Static build, CTest ===
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found Python3: /opt/pyvenv/bin/python3 (found version "3.13.5") found components: Interpreter
+-- Configuring done (5.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/fc028/FastCopy-Mint/build
+[ 25%] Building C object CMakeFiles/upstream_xxhash.dir/external/xxhash/xxhash.c.o
+[ 50%] Linking C static library libupstream_xxhash.a
+[ 50%] Built target upstream_xxhash
+[ 75%] Building CXX object CMakeFiles/fastcopy-mint-cli.dir/linux/engine.cpp.o
+[100%] Linking CXX executable fastcopy-mint-cli
+[100%] Built target fastcopy-mint-cli
+Internal ctest changing into directory: /tmp/fc028/FastCopy-Mint/build
+Test project /tmp/fc028/FastCopy-Mint/build
+    Start 1: resource-layout
+1/3 Test #1: resource-layout ..................   Passed    1.48 sec
+    Start 2: theme-detection
+2/3 Test #2: theme-detection ..................   Passed    0.74 sec
+    Start 3: engine-regression
+3/3 Test #3: engine-regression ................   Passed    1.98 sec
+
+100% tests passed, 0 tests failed out of 3
+
+Total Test time (real) =   4.21 sec
+-- Install configuration: "Release"
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/bin/fastcopy-mint-cli
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/bin/fastcopy-mint
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/fastcopy-mint/rc_layout.json
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/fastcopy-mint/fastcopy.png
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/fastcopy-mint/menu.png
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/fastcopy-mint/pause.png
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/fastcopy-mint/play.png
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/fastcopy-mint/fastcopy_eng.htm
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/icons/hicolor/64x64/apps/fastcopy-mint.png
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/applications/fastcopy-mint.desktop
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/doc/fastcopy-mint/README.md
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/doc/fastcopy-mint/license-gpl3.txt
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/share/doc/fastcopy-mint/xxhash-LICENSE.txt
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/bin/fastcopy-mint-selection
+-- Installing: /tmp/tmp.t5gcZmgZhs/pkg/usr/bin/fastcopy-mint-integrate
+dpkg-deb: building package 'fastcopy-mint' in '/tmp/fc028/FastCopy-Mint/dist/fastcopy-mint_0.2.8+static1_amd64.deb'.
+Package: /tmp/fc028/FastCopy-Mint/dist/fastcopy-mint_0.2.8+static1_amd64.deb
+
+=== Unprivileged engine tests ===
+test_cancel_pause_leaves_original (__main__.EngineTests.test_cancel_pause_leaves_original) ... ok
+test_conflict_prevents_prune (__main__.EngineTests.test_conflict_prevents_prune) ... ok
+test_copy_unicode_tree_metadata_symlink (__main__.EngineTests.test_copy_unicode_tree_metadata_symlink) ... ok
+test_default_folder_copy (__main__.EngineTests.test_default_folder_copy) ... ok
+test_destination_multi_source_and_sync (__main__.EngineTests.test_destination_multi_source_and_sync) ... ok
+test_destination_no_slash_existing_only (__main__.EngineTests.test_destination_no_slash_existing_only) ... ok
+test_destination_slash_create_and_preview (__main__.EngineTests.test_destination_slash_create_and_preview) ... ok
+test_diff_no_overwrite_newer_overwrite (__main__.EngineTests.test_diff_no_overwrite_newer_overwrite) ... ok
+test_filter_and_long_names (__main__.EngineTests.test_filter_and_long_names) ... ok
+test_include_exclude_preview_and_no_matches (__main__.EngineTests.test_include_exclude_preview_and_no_matches) ... ok
+test_live_speed_pipe_disconnect_cancels (__main__.EngineTests.test_live_speed_pipe_disconnect_cancels) ... ok
+test_live_speed_pipe_suspend_resume (__main__.EngineTests.test_live_speed_pipe_suspend_resume) ... ok
+test_move_verified (__main__.EngineTests.test_move_verified) ... ok
+test_multiple_sources_and_collision (__main__.EngineTests.test_multiple_sources_and_collision) ... ok
+test_no_metadata_respects_umask (__main__.EngineTests.test_no_metadata_respects_umask) ... ok
+test_permission_error_prevents_move_cleanup (__main__.EngineTests.test_permission_error_prevents_move_cleanup) ... ok
+test_preview_no_writes (__main__.EngineTests.test_preview_no_writes) ... ok
+test_reject_overlap_and_symlink_dest (__main__.EngineTests.test_reject_overlap_and_symlink_dest) ... ok
+test_sparse_and_zero_size (__main__.EngineTests.test_sparse_and_zero_size) ... ok
+test_special_file_prevents_move (__main__.EngineTests.test_special_file_prevents_move) ... ok
+test_speed_duty_cycle (__main__.EngineTests.test_speed_duty_cycle) ...   measured verified sparse copy: full=0.077s; 10%=0.896s
+ok
+test_sync_preview_and_confirmed_prune (__main__.EngineTests.test_sync_preview_and_confirmed_prune) ... ok
+test_xattr (__main__.EngineTests.test_xattr) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.390s
+
+OK
+
+=== Packaged GUI: multi / dark ===
+PASS actual Ctrl-click multiselect/deselect, Home, exact footer text, minimum-width layout, folder-only path handover
+PASS append multiple folders and Cancel preserves all paths
+PASS Home clears selection, typed-path override, destination stays single-folder
+PASS all five selected source directories copied and verified through packaged engine
+
+=== Packaged GUI: dest / dark ===
+PASS themed New Folder prompt, invalid/duplicate/file names, Cancel, selection, parent location, modal grab restoration and Source unchanged
+PASS actual mouse drag, equal and opposite pane resizing, minimum sizes, window resize, extended filter and persisted divider
+PASS actual transfers for existing no-slash, new slash, explicit source contents, preview without writes, missing no-slash error
+PASS divider survives restart
+
+=== Packaged GUI: test_gui / dark ===
+PASS original main-window labels and disabled controls
+PASS equal 8 px main-window margins and common right edge at default/enlarged/restored sizes, extended filter and filter help
+PASS main speed track aligned at original and enlarged window sizes
+PASS rendered all 20 dialog templates / 217 controls (scheduler shortcut, note, settings Play icon and 10 help buttons omitted; Linux dark theme checkbox added)
+PASS settings speed track centered between its two neighbors
+PASS all ten settings pages navigate
+PASS Windows Task Scheduler shortcut and note absent from Job dialog
+PASS original Job dialog registers and reloads job
+PASS Listing is non-writing
+PASS Execute copies all files through native engine
+PASS original copy confirmation cancels safely
+PASS unsupported Delete all cannot execute
+
+=== Packaged GUI: test_gui_fixes / dark ===
+PASS folder-only Source and DestDir pickers, dark/light palette, no filetypes dropdown, selection -> text fields, file rejection, navigation, Cancel
+PASS all 11 speed positions on both sliders, default persistence, Apply and Cancel
+PASS uncut About icon, all visible settings labels fit including Log Settings, removed image button
+PASS GUI suspend/resume at 30%, real include/exclude copy, filter fields enabled only while idle and checked
+
+=== Packaged GUI: multi / light ===
+PASS actual Ctrl-click multiselect/deselect, Home, exact footer text, minimum-width layout, folder-only path handover
+PASS append multiple folders and Cancel preserves all paths
+PASS Home clears selection, typed-path override, destination stays single-folder
+PASS all five selected source directories copied and verified through packaged engine
+
+=== Packaged GUI: dest / light ===
+PASS themed New Folder prompt, invalid/duplicate/file names, Cancel, selection, parent location, modal grab restoration and Source unchanged
+PASS actual mouse drag, equal and opposite pane resizing, minimum sizes, window resize, extended filter and persisted divider
+PASS actual transfers for existing no-slash, new slash, explicit source contents, preview without writes, missing no-slash error
+PASS divider survives restart
+
+=== Packaged GUI: test_gui / light ===
+PASS original main-window labels and disabled controls
+PASS equal 8 px main-window margins and common right edge at default/enlarged/restored sizes, extended filter and filter help
+PASS main speed track aligned at original and enlarged window sizes
+PASS rendered all 20 dialog templates / 217 controls (scheduler shortcut, note, settings Play icon and 10 help buttons omitted; Linux dark theme checkbox added)
+PASS settings speed track centered between its two neighbors
+PASS all ten settings pages navigate
+PASS Windows Task Scheduler shortcut and note absent from Job dialog
+PASS original Job dialog registers and reloads job
+PASS Listing is non-writing
+PASS Execute copies all files through native engine
+PASS original copy confirmation cancels safely
+PASS unsupported Delete all cannot execute
+
+=== Packaged GUI: test_gui_fixes / light ===
+PASS folder-only Source and DestDir pickers, dark/light palette, no filetypes dropdown, selection -> text fields, file rejection, navigation, Cancel
+PASS all 11 speed positions on both sliders, default persistence, Apply and Cancel
+PASS uncut About icon, all visible settings labels fit including Log Settings, removed image button
+PASS GUI suspend/resume at 30%, real include/exclude copy, filter fields enabled only while idle and checked
+
+=== Theme persistence ===
+PASS untouched checkbox preserves automatic detection; Cancel discards pending theme changes
+PASS Apply persists selection; subsequent Cancel preserves last applied theme
+PASS saved dark/light preferences take effect after restart despite opposite desktop theme
+PASS launch override does not replace stored checkbox preference
+
+=== File-manager selection tests ===
+PASS NEMO URI selection (spaces and newline)
+PASS CAJA URI selection (spaces and newline)
+PASS positional selection
+
+=== Package dependencies ===
+Version: 0.2.8+static1
+Architecture: amd64
+Depends: python3 (>= 3.9), python3-tk
+Recommends: libglib2.0-bin
+
+=== ELF dynamic section ===
+
+There is no dynamic section in this file.
+
+=== ELF program headers ===
+
+Elf file type is EXEC (Executable file)
+Entry point 0x40c6c0
+There are 11 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align
+  LOAD           0x000000 0x0000000000400000 0x0000000000400000 0x0006c8 0x0006c8 R   0x1000
+  LOAD           0x001000 0x0000000000401000 0x0000000000401000 0x199fdd 0x199fdd R E 0x1000
+  LOAD           0x19b000 0x000000000059b000 0x000000000059b000 0x0624d8 0x0624d8 R   0x1000
+  LOAD           0x1fd990 0x00000000005fe990 0x00000000005fe990 0x00d358 0x016008 RW  0x1000
+  NOTE           0x0002a8 0x00000000004002a8 0x00000000004002a8 0x000020 0x000020 R   0x8
+  NOTE           0x0002c8 0x00000000004002c8 0x00000000004002c8 0x000024 0x000024 R   0x4
+  NOTE           0x1fd4b8 0x00000000005fd4b8 0x00000000005fd4b8 0x000020 0x000020 R   0x4
+  TLS            0x1fd990 0x00000000005fe990 0x00000000005fe990 0x000088 0x0000d0 R   0x8
+  GNU_PROPERTY   0x0002a8 0x00000000004002a8 0x00000000004002a8 0x000020 0x000020 R   0x8
+  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x10
+  GNU_RELRO      0x1fd990 0x00000000005fe990 0x00000000005fe990 0x00b670 0x00b670 R   0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .note.gnu.property .note.gnu.build-id .rela.plt 
+   01     .init .plt .text .fini 
+   02     .rodata .stapsdt.base rodata.cst32 .eh_frame .gcc_except_table .note.ABI-tag 
+   03     .tdata .init_array .fini_array .data.rel.ro .got .got.plt .data .bss 
+   04     .note.gnu.property 
+   05     .note.gnu.build-id 
+   06     .note.ABI-tag 
+   07     .tdata .tbss 
+   08     .note.gnu.property 
+   09     
+   10     .tdata .init_array .fini_array .data.rel.ro .got 
+
+=== Launcher update 0.2.8+static1+launcher1 ===
+The earlier test results above describe the original static1 build. The shipped
+static CLI engine and its relink objects are unchanged in this launcher update.
+PASS: fastcopy --help and fastcopy-mint --help (compatibility symlink).
+PASS: both GUI commands launch and exit under Xvfb with --smoke-test.
+PASS: Nemo/Caja URI and positional selection, including spaces and newlines.
+PASS: non-root integration script install, launch, remove, custom script preservation.
+PASS: CMake staging installs fastcopy and the relative fastcopy-mint symlink
+(using the original prebuilt engine, without relinking).
+PASS: package version compares greater than 0.2.8+static1.
+No physical Linux Mint desktop installation was performed for this update.
+
+=== Minimize-to-tray update 0.2.8+static1+launcher1+tray1 ===
+Debian 13 / GTK 3.24.49 / Tk / Xvfb + Openbox and an XEmbed test host.
+PASS: no notification area -> ordinary taskbar minimization.
+PASS: actual GtkStatusIcon docks; Tk main window is withdrawn only after embedding.
+PASS: actual left-click (XTest) restores the window and unregisters the icon.
+PASS: paused transfer resumes and finishes while hidden, output matches source.
+PASS: tray host removal and helper termination each restore the window.
+PASS: closing FastCopy cleans up the tray helper.
+PASS: resource-layout and theme-detection tests; all existing GUI layout,
+folder-picker, multisource, theme and transfer tests under bare Xvfb.
+PASS: all 23 engine tests as a regular user; Nemo/Caja integration tests.
+PASS: both fastcopy and fastcopy-mint --smoke-test with staged package layout.
+PASS: original static CLI engine and resource-layout JSON byte-for-byte unchanged.
+PASS: version compares greater than 0.2.8+static1+launcher1.
+Known test-environment issue: test_gui.py's exact speed-label position assertion
+fails with Openbox for both the previous and new release; it passes with the
+original bare-Xvfb layout test environment. No related layout changes were made.
+XApp ABI and state values were checked against the public upstream API; the
+native XApp path was not runtime-tested (libxapp1 is absent in this environment).
+Actual Linux Mint Cinnamon/MATE and Wayland desktop sessions were not tested.
+The original prebuilt engine is repackaged without recompilation or relinking.
+
+=== Sole GUI command update 0.2.8+static1+launcher1+tray1+command1 ===
+PASS: isolated dpkg unpack/upgrade from tray1 removes /usr/bin/fastcopy-mint;
+      /usr/bin/fastcopy remains executable and --help works.
+PASS: CMake staged installation removes the previous relative compatibility
+      symlink, preserves unrelated regular files, and creates no old launcher.
+      Installation rules tested using the original prebuilt engine.
+PASS: packaged fastcopy --smoke-test under Xvfb.
+PASS: GUI, CLI engine, tray helper, layout, desktop entry, and Nemo/Caja
+      helper executables are byte-for-byte unchanged from tray1.
+PASS: package version compares greater than the previous tray1 release.
+Only the GUI launcher alias was removed. Package identity, settings directory,
+internal helper names, and runtime files are unchanged. No actual Mint desktop
+installation or native XApp runtime test was performed for this update.
+
+=== Complete listing update 0.2.8+static1+launcher1+tray1+command1+listing1 ===
+REPRODUCED on the previous packaged GUI: with 2,400 synchronized files,
+editing the first scanned file while retaining its size but changing mtime
+produced a Would copy record in the full engine log but no corresponding
+visible entry (the old UI discarded the first 200 lines each time it exceeded
+2,000 lines). The new GUI no longer trims output. Preview skips are summarized
+while the optional LastFileLog.log retains each raw record.
+PASS: tests/test_listing_gui.py against the staged package under Xvfb:
+  2,400-file Sync preview, same-size changed file, destination extra, no writes;
+  actual Sync copies changed file and removes extra; full Execute log retained;
+  all 2,400 planned overwrite actions retained;
+  preview/Execute parity for diff, sync, newer, no-overwrite, overwrite, move;
+  new files, same-size changed mtime in either direction, same-mtime size change;
+  skipped file counts, optional full file log, complete 2,400-message error log.
+PASS: all 23 original engine tests as a regular user.
+PASS: existing GUI, GUI fixes, destination, multisource suites in light and dark;
+      theme persistence, resource generation, theme-detection, Nemo/Caja integration.
+The existing static executable, transfer rules, tray helper, and layout resources
+are unchanged; real Linux Mint Cinnamon/MATE sessions were not retested.
+Size/Date comparison remains size and modification time, not content hashing.
+
+=== Cinnamon/MATE tray correction 0.2.8+static1+launcher1+tray1+command1+listing1+tray2 ===
+PASS: Xvfb/Openbox + real GTK/XEmbed tray: regular minimize, withdraw and
+  removal from the EWMH client list, click restore, rapid re-minimize,
+  background copy, tray loss, helper loss, helper cleanup on exit.
+PASS: simulated compositor-style EWMH HIDDEN property on a still-mapped Tk
+  window with Tk state normal; tray withdraw, removal from client list and
+  click restore; HIDDEN+SHADED is not treated as minimized.
+PASS: same tray suite with test-only mock libxapp.so.1 returning NULL from
+  icon creation; the direct GTK fallback succeeds. The mock is not packaged.
+PASS: all 23 original engine tests as a regular user; listing GUI suite
+  including 2,400-file regression and all six copy-mode preview/execute checks;
+  packaged fastcopy --smoke-test under Xvfb.
+Actual native XApp registration and real Cinnamon/MATE desktop sessions have
+not been tested; libxapp and those desktops are absent here. The root cause on
+an individual Mint installation is not confirmed. The original static engine
+is byte-for-byte unchanged; the package and source version are synchronized.
+
+=== Folder picker keyboard navigation 0.2.8+static1+launcher1+tray1+command1+listing1+tray2+typeahead1 ===
+PASS: tests/test_typeahead_gui.py under Xvfb/Openbox against the staged
+  installed launcher: initial list focus in Source, Add Directory, DestDir;
+  actual Tk key events for first-letter, case-insensitive multi-character
+  prefix, repeated-letter wrap, timeout, scrolling, unmatched search,
+  spaces, arrow keys, Enter navigation and path-entry typing. Unicode
+  matching was tested through the same handler (no native IME on Xvfb).
+  Ctrl-click selection and returned Source/DestDir paths also verified.
+PASS: existing multisource, destination, GUI layout and Listing/Execute
+  regression suites against the staged installed launcher under Xvfb.
+PASS: all 23 original C++ engine tests as a regular user.
+The folder-only restriction remains; no new dependencies, layout resource,
+tray or copy engine changes. Native Cinnamon/MATE sessions not retested.

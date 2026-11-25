@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=FastCopy
+GenericName=File Transfer Manager
+Comment=FastCopy
+Exec=fastcopy -- %F
+TryExec=fastcopy
+Icon=fastcopy-mint
+Terminal=false
+Categories=Utility;FileTools;FileManager;
+StartupNotify=false
+StartupWMClass=FastCopy
+Keywords=copy;move;sync;verify;backup;FastCopy;

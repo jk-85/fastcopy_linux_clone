@@ -1,0 +1,3435 @@
+{
+  "dialogs": {
+    "SETUP_DIALOG": {
+      "size": [
+        294,
+        214
+      ],
+      "caption": "Main Settings",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "IDOK",
+          "text": "OK",
+          "cls": "",
+          "style": "",
+          "rect": [
+            5,
+            118,
+            68,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "IDAPPLY",
+          "text": "Apply",
+          "cls": "",
+          "style": "",
+          "rect": [
+            5,
+            137,
+            68,
+            13
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "IDCANCEL",
+          "text": "Cancel",
+          "cls": "",
+          "style": "",
+          "rect": [
+            5,
+            154,
+            68,
+            14
+          ]
+        },
+        {
+          "kind": "LISTBOX",
+          "id": "SETUP_LIST",
+          "text": "",
+          "cls": "",
+          "style": "LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP,WS_EX_CLIENTEDGE",
+          "rect": [
+            5,
+            4,
+            70,
+            100
+          ]
+        }
+      ]
+    },
+    "MAIN_DIALOG": {
+      "size": [
+        231,
+        319
+      ],
+      "caption": "FastCopy",
+      "font": 8,
+      "controls": [
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "IDOK",
+          "text": "Execute",
+          "cls": "",
+          "style": "",
+          "rect": [
+            189,
+            149,
+            37,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "SRC_FILE_BUTTON",
+          "text": "Source",
+          "cls": "",
+          "style": "",
+          "rect": [
+            4,
+            3,
+            31,
+            14
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "SRC_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_GROUP",
+          "rect": [
+            38,
+            4,
+            187,
+            20
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HIST_BTN",
+          "text": "",
+          "cls": "",
+          "style": "BS_ICON",
+          "rect": [
+            25,
+            17,
+            9,
+            9
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "DST_FILE_BUTTON",
+          "text": "DestDir",
+          "cls": "",
+          "style": "",
+          "rect": [
+            4,
+            29,
+            31,
+            14
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "DST_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            38,
+            29,
+            187,
+            156
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "MODE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            147,
+            48,
+            78,
+            99
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SPEED_SLIDER",
+          "text": "",
+          "cls": "msctls_trackbar32",
+          "style": "TBS_AUTOTICKS | TBS_TOP | TBS_ENABLESELRANGE | WS_TABSTOP ",
+          "rect": [
+            186,
+            79,
+            45,
+            16
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "IGNORE_CHECK",
+          "text": "Nonstop",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            155,
+            100,
+            40,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "VERIFY_CHECK",
+          "text": "Verify",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            155,
+            112,
+            35,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "ESTIMATE_CHECK",
+          "text": "Estimate",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            155,
+            124,
+            44,
+            10
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "ATONCE_BUTTON",
+          "text": "Start at once (Now, waiting)",
+          "cls": "",
+          "style": "NOT WS_VISIBLE",
+          "rect": [
+            5,
+            135,
+            138,
+            13
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "STREAM_CHECK",
+          "text": "AltStream",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            55,
+            153,
+            49,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "FILTER_CHECK",
+          "text": "Filter",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_VCENTER | WS_GROUP | WS_TABSTOP ",
+          "rect": [
+            195,
+            171,
+            29,
+            10
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "INCLUDE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            34,
+            167,
+            154,
+            78
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "EXCLUDE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            34,
+            182,
+            154,
+            78
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "FROMDATE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            5,
+            207,
+            53,
+            56
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "TODATE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            61,
+            207,
+            53,
+            56
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "MINSIZE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            118,
+            207,
+            53,
+            56
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "MAXSIZE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            174,
+            207,
+            53,
+            56
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "LIST_BUTTON",
+          "text": "Listing",
+          "cls": "",
+          "style": "BS_MULTILINE",
+          "rect": [
+            152,
+            149,
+            35,
+            14
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "PATH_EDIT",
+          "text": "",
+          "cls": "RICHEDIT50W",
+          "style": "WS_VSCROLL | WS_HSCROLL | 0x8c4 WS_EX_STATICEDGE",
+          "rect": [
+            4,
+            223,
+            223,
+            36
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "ERR_EDIT",
+          "text": "",
+          "cls": "RICHEDIT50W",
+          "style": "WS_VSCROLL | WS_HSCROLL | 0x8c4 WS_EX_STATICEDGE",
+          "rect": [
+            4,
+            274,
+            223,
+            41
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "STATUS_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | NOT WS_BORDER | NOT WS_TABSTOP,WS_EX_STATICEDGE",
+          "rect": [
+            4,
+            48,
+            140,
+            84
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "ERR_STATIC",
+          "text": "Error Log",
+          "cls": "",
+          "style": "",
+          "rect": [
+            4,
+            263,
+            36,
+            8
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "ERRSTATUS_STATIC",
+          "text": "(ErrFiles : 0 / ErrDirs : 0)",
+          "cls": "",
+          "style": "",
+          "rect": [
+            44,
+            263,
+            140,
+            8
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "INC_STATIC",
+          "text": "Include",
+          "cls": "",
+          "style": "",
+          "rect": [
+            5,
+            168,
+            25,
+            8
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "EXC_STATIC",
+          "text": "Exclude",
+          "cls": "",
+          "style": "",
+          "rect": [
+            5,
+            183,
+            26,
+            8
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "RUNAS_BUTTON",
+          "text": "",
+          "cls": "",
+          "style": "BS_ICON | NOT WS_VISIBLE",
+          "rect": [
+            196,
+            124,
+            8,
+            13
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "TODATE_STATIC",
+          "text": "ToDate",
+          "cls": "",
+          "style": "",
+          "rect": [
+            73,
+            198,
+            32,
+            8
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "FROMDATE_STATIC",
+          "text": "FromDate",
+          "cls": "",
+          "style": "",
+          "rect": [
+            14,
+            198,
+            37,
+            8
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "MAXSIZE_STATIC",
+          "text": "MaxSize",
+          "cls": "",
+          "style": "",
+          "rect": [
+            187,
+            198,
+            33,
+            8
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "MINSIZE_STATIC",
+          "text": "MinSize",
+          "cls": "",
+          "style": "",
+          "rect": [
+            132,
+            198,
+            32,
+            8
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "FILTERHELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "BS_CENTER | BS_VCENTER | BS_FLAT | NOT WS_VISIBLE",
+          "rect": [
+            210,
+            182,
+            11,
+            11
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "SAMEDRV_STATIC",
+          "text": "",
+          "cls": "",
+          "style": "0,WS_EX_STATICEDGE",
+          "rect": [
+            152,
+            136,
+            73,
+            11
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "JOBTITLE_STATIC",
+          "text": "",
+          "cls": "",
+          "style": "NOT WS_VISIBLE | WS_DISABLED,WS_EX_CLIENTEDGE",
+          "rect": [
+            207,
+            126,
+            8,
+            9
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "BUF_STATIC",
+          "text": "Buffer(MB)",
+          "cls": "",
+          "style": "",
+          "rect": [
+            154,
+            67,
+            35,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "ACL_CHECK",
+          "text": "ACL",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            15,
+            153,
+            33,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "OWDEL_CHECK",
+          "text": "Wipe && Delete",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            14,
+            153,
+            62,
+            10
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "BUFSIZE_EDIT",
+          "text": "256",
+          "cls": "",
+          "style": "SS_NOTIFY | SS_CENTERIMAGE | SS_SUNKEN,WS_EX_STATICEDGE",
+          "rect": [
+            193,
+            66,
+            26,
+            12
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "PAUSELIST_BTN",
+          "text": "PL",
+          "cls": "",
+          "style": "BS_ICON | BS_MULTILINE | NOT WS_VISIBLE",
+          "rect": [
+            156,
+            149,
+            28,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "PAUSEOK_BTN",
+          "text": "PO",
+          "cls": "",
+          "style": "BS_ICON | BS_MULTILINE | NOT WS_VISIBLE",
+          "rect": [
+            193,
+            149,
+            28,
+            14
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "SPEED_STATIC",
+          "text": "Full Speed",
+          "cls": "",
+          "style": "SS_NOTIFY | SS_SUNKEN",
+          "rect": [
+            147,
+            86,
+            39,
+            9
+          ]
+        }
+      ]
+    },
+    "INPUT_DIALOG": {
+      "size": [
+        119,
+        38
+      ],
+      "caption": "New Directory",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "EDITTEXT",
+          "id": "INPUT_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            7,
+            4,
+            104,
+            13
+          ]
+        },
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "IDOK",
+          "text": "Create",
+          "cls": "",
+          "style": "",
+          "rect": [
+            18,
+            20,
+            44,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "IDCANCEL",
+          "text": "Cancel",
+          "cls": "",
+          "style": "",
+          "rect": [
+            73,
+            20,
+            32,
+            14
+          ]
+        }
+      ]
+    },
+    "ABOUT_DIALOG": {
+      "size": [
+        165,
+        126
+      ],
+      "caption": "About FastCopy",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "IDOK",
+          "text": "OK",
+          "cls": "",
+          "style": "",
+          "rect": [
+            59,
+            104,
+            50,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "URL_BUTTON",
+          "text": "https://fastcopy.jp/en/",
+          "cls": "",
+          "style": "",
+          "rect": [
+            28,
+            82,
+            113,
+            17
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "ABOUT_STATIC",
+          "text": "%s %s%s\r\n\r\n%s",
+          "cls": "",
+          "style": "SS_SUNKEN",
+          "rect": [
+            29,
+            5,
+            127,
+            43
+          ]
+        },
+        {
+          "kind": "ICON",
+          "id": "IDC_STATIC",
+          "text": "FASTCOPY_ICON",
+          "cls": "",
+          "style": "",
+          "rect": [
+            5,
+            5,
+            20,
+            20
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "LIB_STATIC",
+          "text": "%s",
+          "cls": "",
+          "style": "SS_SUNKEN",
+          "rect": [
+            29,
+            50,
+            127,
+            21
+          ]
+        }
+      ]
+    },
+    "CONFIRM_DIALOG": {
+      "size": [
+        135,
+        70
+      ],
+      "caption": "Error Occured",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "IDOK",
+          "text": "Continue",
+          "cls": "",
+          "style": "",
+          "rect": [
+            2,
+            54,
+            39,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "IDIGNORE",
+          "text": "Always Cont.",
+          "cls": "",
+          "style": "",
+          "rect": [
+            46,
+            54,
+            47,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "IDCANCEL",
+          "text": "Stop",
+          "cls": "",
+          "style": "",
+          "rect": [
+            99,
+            54,
+            34,
+            14
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "MESSAGE_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_MULTILINE | ES_READONLY | NOT WS_BORDER | WS_VSCROLL | NOT WS_TABSTOP,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE",
+          "rect": [
+            2,
+            2,
+            131,
+            47
+          ]
+        }
+      ]
+    },
+    "COPYCONFIRM_DIALOG": {
+      "size": [
+        167,
+        117
+      ],
+      "caption": "Execute Copy",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "IDOK",
+          "text": "Execute",
+          "cls": "",
+          "style": "",
+          "rect": [
+            63,
+            99,
+            39,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "IDCANCEL",
+          "text": "Cancel",
+          "cls": "",
+          "style": "",
+          "rect": [
+            110,
+            99,
+            34,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "RUNAS_BUTTON",
+          "text": "",
+          "cls": "",
+          "style": "BS_ICON | NOT WS_VISIBLE",
+          "rect": [
+            154,
+            99,
+            10,
+            14
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "SRC_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_MULTILINE | ES_READONLY | WS_VSCROLL | NOT WS_TABSTOP",
+          "rect": [
+            2,
+            15,
+            162,
+            40
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "DST_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_MULTILINE | ES_READONLY | WS_VSCROLL | NOT WS_TABSTOP",
+          "rect": [
+            2,
+            70,
+            162,
+            24
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Source",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            4,
+            27,
+            10
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "DST_STATIC",
+          "text": "DestDir",
+          "cls": "",
+          "style": "",
+          "rect": [
+            2,
+            59,
+            26,
+            9
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_CONFIRM_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "NOT WS_VISIBLE,WS_EX_STATICEDGE",
+          "rect": [
+            4,
+            100,
+            12,
+            12
+          ]
+        }
+      ]
+    },
+    "DELCONFIRM_DIALOG": {
+      "size": [
+        171,
+        71
+      ],
+      "caption": "Delete All Files/Dirs",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "IDOK",
+          "text": "Execute",
+          "cls": "",
+          "style": "",
+          "rect": [
+            64,
+            55,
+            39,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "IDCANCEL",
+          "text": "Cancel",
+          "cls": "",
+          "style": "",
+          "rect": [
+            112,
+            55,
+            34,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "RUNAS_BUTTON",
+          "text": "",
+          "cls": "",
+          "style": "BS_ICON | NOT WS_VISIBLE",
+          "rect": [
+            157,
+            55,
+            10,
+            14
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "SRC_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_MULTILINE | ES_READONLY | WS_VSCROLL | NOT WS_TABSTOP",
+          "rect": [
+            2,
+            2,
+            166,
+            48
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "OWDEL_CHECK",
+          "text": "Wipe\r\n && Delete",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            4,
+            51,
+            47,
+            18
+          ]
+        }
+      ]
+    },
+    "JOB_DIALOG": {
+      "size": [
+        189,
+        126
+      ],
+      "caption": "Job Register/Modify & Delete",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "COMBOBOX",
+          "id": "TITLE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            38,
+            5,
+            122,
+            104
+          ]
+        },
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "IDOK",
+          "text": "Register",
+          "cls": "",
+          "style": "",
+          "rect": [
+            108,
+            24,
+            46,
+            16
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "JOB_STATIC",
+          "text": "Register/Modify Job in main window params",
+          "cls": "",
+          "style": "SS_SUNKEN",
+          "rect": [
+            22,
+            22,
+            79,
+            20
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "IDC_STATIC",
+          "text": "Delete selected jobs",
+          "cls": "",
+          "style": "SS_SUNKEN",
+          "rect": [
+            22,
+            46,
+            79,
+            16
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "JOBDEL_BUTTON",
+          "text": "Delete",
+          "cls": "",
+          "style": "",
+          "rect": [
+            108,
+            46,
+            46,
+            15
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            165,
+            4,
+            13,
+            12
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "JobName",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            6,
+            31,
+            8
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "TASKSCHE_BUTTON",
+          "text": "Open \"Windows Task Scheduler\"",
+          "cls": "",
+          "style": "BS_MULTILINE",
+          "rect": [
+            15,
+            70,
+            148,
+            15
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Only shortcut.\r\nFastCopy doesn't have any function for windows task scheduler.",
+          "cls": "",
+          "style": "0,WS_EX_STATICEDGE",
+          "rect": [
+            11,
+            89,
+            168,
+            26
+          ]
+        }
+      ]
+    },
+    "MESSAGE_DIALOG": {
+      "size": [
+        157,
+        49
+      ],
+      "caption": "FastCopy",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "IDOK",
+          "text": "OK",
+          "cls": "",
+          "style": "",
+          "rect": [
+            27,
+            32,
+            47,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "IDCANCEL",
+          "text": "Cancel",
+          "cls": "",
+          "style": "",
+          "rect": [
+            79,
+            32,
+            48,
+            14
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "MESSAGE_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_CENTER | ES_MULTILINE | ES_READONLY | NOT WS_BORDER | WS_VSCROLL",
+          "rect": [
+            2,
+            3,
+            152,
+            24
+          ]
+        }
+      ]
+    },
+    "FINACTION_DIALOG": {
+      "size": [
+        215,
+        240
+      ],
+      "caption": "Post-Process",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "COMBOBOX",
+          "id": "TITLE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            10,
+            15,
+            107,
+            99
+          ]
+        },
+        {
+          "kind": "DEFPUSHBUTTON",
+          "id": "ADD_BUTTON",
+          "text": "Register",
+          "cls": "",
+          "style": "",
+          "rect": [
+            122,
+            14,
+            40,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "DEL_BUTTON",
+          "text": "Delete",
+          "cls": "",
+          "style": "",
+          "rect": [
+            165,
+            14,
+            29,
+            14
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "SOUND_BUTTON",
+          "text": "File...",
+          "cls": "",
+          "style": "",
+          "rect": [
+            9,
+            45,
+            26,
+            13
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "SOUND_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            37,
+            45,
+            166,
+            12
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SOUNDERR_CHECK",
+          "text": "Only play, if error occurred.",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            12,
+            61,
+            111,
+            12
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "PLAY_BUTTON",
+          "text": "Play",
+          "cls": "",
+          "style": "",
+          "rect": [
+            167,
+            61,
+            29,
+            13
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "CMD_BUTTON",
+          "text": "File...",
+          "cls": "",
+          "style": "",
+          "rect": [
+            9,
+            133,
+            26,
+            13
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "CMD_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            37,
+            134,
+            166,
+            12
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "FACMD_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            57,
+            151,
+            56,
+            88
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "WAITCMD_CHECK",
+          "text": "Wait for Finish",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            123,
+            152,
+            57,
+            9
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SUSPEND_CHECK",
+          "text": "Standby",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            11,
+            186,
+            48,
+            13
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "HIBERNATE_CHECK",
+          "text": "Hibernation",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            11,
+            202,
+            51,
+            13
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SHUTDOWN_CHECK",
+          "text": "Shutdown",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            11,
+            218,
+            47,
+            13
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "SHUTDOWNTIME_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_RIGHT | ES_MULTILINE | ES_AUTOHSCROLL | ES_NUMBER",
+          "rect": [
+            116,
+            185,
+            20,
+            14
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "FORCE_CHECK",
+          "text": "Force mode",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            82,
+            202,
+            53,
+            12
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SHUTDOWNERR_CHECK",
+          "text": "Don't execute, if an error occurred.",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            81,
+            220,
+            129,
+            10
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "sec",
+          "cls": "",
+          "style": "",
+          "rect": [
+            140,
+            187,
+            13,
+            11
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Grace",
+          "cls": "",
+          "style": "",
+          "rect": [
+            92,
+            187,
+            22,
+            12
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Play Sound",
+          "cls": "",
+          "style": "",
+          "rect": [
+            5,
+            32,
+            205,
+            48
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Execute command (separator is ';' )",
+          "cls": "",
+          "style": "",
+          "rect": [
+            5,
+            85,
+            205,
+            84
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Shutdown/Standby",
+          "cls": "",
+          "style": "",
+          "rect": [
+            5,
+            175,
+            205,
+            62
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "ActionName",
+          "cls": "",
+          "style": "",
+          "rect": [
+            7,
+            4,
+            40,
+            8
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "If there are spaces within the Path, it is required to wrap the Path with \"\". Multiple commands can be specified using semicolon as separators.\r\n ex) \"C:\\a b\\c.exe\" -x; C:\\d\\e.exe",
+          "cls": "",
+          "style": "",
+          "rect": [
+            15,
+            97,
+            190,
+            33
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Execute at",
+          "cls": "",
+          "style": "",
+          "rect": [
+            12,
+            153,
+            40,
+            8
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            197,
+            1,
+            13,
+            12
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET1": {
+      "size": [
+        208,
+        182
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "CONTROL",
+          "id": "ESTIMATE_CHECK",
+          "text": "Estimate FinishTime",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            11,
+            19,
+            78,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "IGNORE_CHECK",
+          "text": "NonStop (Ignore Errs)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            11,
+            34,
+            85,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "VERIFY_CHECK",
+          "text": "Verify",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            95,
+            19,
+            35,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "ACL_CHECK",
+          "text": "ACL",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            135,
+            19,
+            29,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "STREAM_CHECK",
+          "text": "AltStream",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            135,
+            34,
+            49,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SPEED_SLIDER",
+          "text": "",
+          "cls": "msctls_trackbar32",
+          "style": "TBS_AUTOTICKS | TBS_TOP | TBS_ENABLESELRANGE | WS_TABSTOP ",
+          "rect": [
+            59,
+            50,
+            47,
+            14
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "OWDEL_CHECK",
+          "text": "Wipe && Delete (for delete mode. slower than normal)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            76,
+            187,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "EXTENDFILTER_CHECK",
+          "text": "Always show extended filter. (timestamp/size filter)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            10,
+            94,
+            184,
+            10
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "SPEED_STATIC",
+          "text": "Full Speed",
+          "cls": "",
+          "style": "SS_SUNKEN",
+          "rect": [
+            107,
+            54,
+            40,
+            9
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Speed Control",
+          "cls": "",
+          "style": "",
+          "rect": [
+            10,
+            56,
+            49,
+            9
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Default parameters for Main Window",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            110
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "LCID_CHECK",
+          "text": "English UI (need to restart)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP ",
+          "rect": [
+            9,
+            132,
+            105,
+            10
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Language",
+          "cls": "",
+          "style": "",
+          "rect": [
+            2,
+            119,
+            201,
+            31
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET2": {
+      "size": [
+        208,
+        207
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "CONTROL",
+          "id": "SECTOR4096_CHECK",
+          "text": "MinSectorSize is regarded as 4KB",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            10,
+            74,
+            146,
+            10
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "OverLap I/O Num",
+          "cls": "",
+          "style": "",
+          "rect": [
+            10,
+            56,
+            59,
+            8
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "READOSBUF_CHECK",
+          "text": "Use OS buffer for reading (OS is likely to be slow)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            110,
+            191,
+            10
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "NONBUFMINNTFS_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            47,
+            148,
+            21,
+            12
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "NONBUFMINFAT_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            101,
+            147,
+            20,
+            12
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "LARGEFETCH_CHK",
+          "text": "Enable Large fetch mode (Win7 or later only)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            12,
+            185,
+            181,
+            9
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "on NTFS",
+          "cls": "",
+          "style": "",
+          "rect": [
+            17,
+            149,
+            29,
+            10
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "on FAT",
+          "cls": "",
+          "style": "",
+          "rect": [
+            75,
+            149,
+            25,
+            9
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Use OS buffer for writing, if a file is smaller than specify size(KB).",
+          "cls": "",
+          "style": "",
+          "rect": [
+            13,
+            128,
+            171,
+            17
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "I/O unit (MB)",
+          "cls": "",
+          "style": "",
+          "rect": [
+            11,
+            39,
+            60,
+            9
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "OS Cache settings",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            96,
+            201,
+            72
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "I/O Settgins",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            88
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Directory Fetch",
+          "cls": "",
+          "style": "",
+          "rect": [
+            2,
+            172,
+            201,
+            30
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "OVLSIZE_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            71,
+            37,
+            19,
+            12
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "OVLNUM_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            71,
+            55,
+            19,
+            12
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": " = Max I/O size",
+          "cls": "",
+          "style": "",
+          "rect": [
+            93,
+            57,
+            52,
+            8
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "MAXTRANS_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL | ES_READONLY",
+          "rect": [
+            148,
+            55,
+            19,
+            12
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "MB",
+          "cls": "",
+          "style": "",
+          "rect": [
+            171,
+            57,
+            11,
+            8
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "IDC_STATIC",
+          "text": "1MB I/O unit is the best in many environments",
+          "cls": "",
+          "style": "0,WS_EX_STATICEDGE",
+          "rect": [
+            93,
+            32,
+            89,
+            17
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "BUFSIZE_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            68,
+            15,
+            24,
+            12
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Buffer Size(MB)",
+          "cls": "",
+          "style": "",
+          "rect": [
+            11,
+            17,
+            49,
+            8
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET3": {
+      "size": [
+        208,
+        147
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "EDITTEXT",
+          "id": "DRIVEMAP_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            12,
+            16,
+            105,
+            13
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "ex) if C:D: are same HDD and E:F: are same HDD, \"CD,EF\"",
+          "cls": "",
+          "style": "",
+          "rect": [
+            9,
+            34,
+            193,
+            8
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "NETDRVMODE_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            10,
+            74,
+            184,
+            82
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Physical drive group decision policy of network drive.",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            59,
+            201,
+            36
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Manual settings of physical drive group.",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            50
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "IDC_STATIC",
+          "text": "These settings are used by the determination\r\nof Same/Diff HDD mode.",
+          "cls": "",
+          "style": "0,WS_EX_STATICEDGE",
+          "rect": [
+            5,
+            99,
+            196,
+            22
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET4": {
+      "size": [
+        208,
+        147
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "EDITTEXT",
+          "id": "MAXRUN_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            144,
+            15,
+            28,
+            13
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "FORCESTART_CHECK",
+          "text": "(Ignore the above settings, )\r\nDon't wait for other running FastCopy to finish",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            10,
+            97,
+            166,
+            24
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Max number of running FastCopy procs.",
+          "cls": "",
+          "style": "",
+          "rect": [
+            8,
+            17,
+            131,
+            8
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "If another running FastCopy uses the same HDDs,\r\n (even if the number of running FastCopy procs is\r\n under than \"Max number of running FastCopy procs\"),\r\nit will be waited for termination of running FastCopy.",
+          "cls": "",
+          "style": "0,WS_EX_STATICEDGE",
+          "rect": [
+            9,
+            32,
+            187,
+            35
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "If you want to change the policy of drive group decision, \"Physical Drive Group\".",
+          "cls": "",
+          "style": "0,WS_EX_STATICEDGE",
+          "rect": [
+            9,
+            68,
+            187,
+            20
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Parallel running Settings",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            130
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET5": {
+      "size": [
+        208,
+        216
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "CONTROL",
+          "id": "EMPTYDIR_CHECK",
+          "text": "Don't create empty directory, if \"Filter\" is checked.",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            8,
+            19,
+            182,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SAMEDIR_RENAME_CHECK",
+          "text": "Use a modified name, if destdir same as src's parent.",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_GROUP | WS_TABSTOP ",
+          "rect": [
+            8,
+            34,
+            191,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "REPARSE_CHECK",
+          "text": "Copy Junction/Symlink as Junction/Symlink (not target)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            8,
+            49,
+            195,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "MOVEATTR_CHECK",
+          "text": "Change \"Move(Overwrite)\" to \"Move(Date/Size)\"",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            8,
+            64,
+            184,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SERIALMOVE_CHECK",
+          "text": "Move one by one",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            8,
+            79,
+            72,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SERIALVERIFYMOVE_CHECK",
+          "text": "Move one by one (verify)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            85,
+            79,
+            99,
+            10
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Tolerance at the timestamp comparison",
+          "cls": "",
+          "style": "",
+          "rect": [
+            9,
+            97,
+            130,
+            8
+          ]
+        },
+        {
+          "kind": "EDITTEXT",
+          "id": "TIMEGRACE_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_RIGHT | ES_AUTOHSCROLL",
+          "rect": [
+            143,
+            95,
+            34,
+            13
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Copy/Move Options",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            132
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "msec",
+          "cls": "",
+          "style": "",
+          "rect": [
+            181,
+            97,
+            18,
+            8
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "DST mode",
+          "cls": "",
+          "style": "",
+          "rect": [
+            11,
+            115,
+            39,
+            8
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "DLSVT_CMB",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            56,
+            113,
+            138,
+            70
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Verify Options",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            140,
+            200,
+            53
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "VERIFYREMOVE_CHK",
+          "text": "If a verify error occurs, delete the file instead of renaming to .fc_verify_err",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            9,
+            169,
+            185,
+            17
+          ]
+        },
+        {
+          "kind": "COMBOBOX",
+          "id": "HASH_COMBO",
+          "text": "",
+          "cls": "",
+          "style": "CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP",
+          "rect": [
+            55,
+            153,
+            52,
+            70
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Hash mode",
+          "cls": "",
+          "style": "",
+          "rect": [
+            12,
+            154,
+            38,
+            8
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET6": {
+      "size": [
+        208,
+        147
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "CONTROL",
+          "id": "DELDIR_CHECK",
+          "text": "Try to delete directory, even if \"Filter\" is checked.",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            9,
+            16,
+            171,
+            15
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "NSA_CHECK",
+          "text": "Use NSA method for Wipe && Delete option (very slow)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            9,
+            35,
+            187,
+            17
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Delete Options",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            61
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET7": {
+      "size": [
+        208,
+        147
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "EDITTEXT",
+          "id": "HISTORY_EDIT",
+          "text": "",
+          "cls": "",
+          "style": "ES_AUTOHSCROLL",
+          "rect": [
+            115,
+            14,
+            21,
+            13
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "ERRLOG_CHECK",
+          "text": "Write to Error Log (FastCopy.log)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            38,
+            123,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "UTF8LOG_CHECK",
+          "text": "Use UTF-8 in ErrLog",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            52,
+            81,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "FILELOG_CHECK",
+          "text": "Write to File Log (Log\\DATE.log)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            66,
+            123,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "TIMESTAMP_CHECK",
+          "text": "FileDate",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            21,
+            80,
+            42,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "FILESIZE_CHECK",
+          "text": "FileSize",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            67,
+            80,
+            41,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "ACLERRLOG_CHECK",
+          "text": "Write ACL errors to Error Log",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            96,
+            112,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "STREAMERRLOG_CHECK",
+          "text": "Write AltStream errors to Error Log",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            110,
+            131,
+            10
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Number of history items for\r\n Src/DestDir (need to restart)",
+          "cls": "",
+          "style": "",
+          "rect": [
+            8,
+            12,
+            101,
+            17
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Log Settings",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            138
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET8": {
+      "size": [
+        209,
+        185
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "CONTROL",
+          "id": "RIGHT_COPY_CHECK",
+          "text": "Copy",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            15,
+            69,
+            31,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "RIGHT_DELETE_CHECK",
+          "text": "Delete",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            15,
+            83,
+            37,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "RIGHT_PASTE_CHECK",
+          "text": "Paste",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            15,
+            97,
+            33,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "RIGHT_SUBMENU_CHECK",
+          "text": "Use sub menu",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            15,
+            111,
+            58,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "DD_COPY_CHECK",
+          "text": "Copy",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            91,
+            69,
+            31,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "DD_MOVE_CHECK",
+          "text": "Move",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            91,
+            83,
+            33,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "DD_SUBMENU_CHECK",
+          "text": "Use sub menu",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            91,
+            97,
+            57,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "AUTOCLOSE_CHECK",
+          "text": "Auto close, if no error",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            132,
+            85,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "TASKTRAY_CHECK",
+          "text": "Run in tasktray",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            123,
+            132,
+            62,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "NOCONFIRMDEL_CHECK",
+          "text": "Don't confirm Delete(danger)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            148,
+            109,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SHICON_CHECK",
+          "text": "Show icons in menu",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            123,
+            148,
+            77,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "NOCONFIRM_CHECK",
+          "text": "Don't confirm in Copy(drag&&drop) / Move / Paste",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            164,
+            170,
+            10
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "RCMENU_STATIC",
+          "text": "Right click Menu",
+          "cls": "",
+          "style": "",
+          "rect": [
+            10,
+            57,
+            67,
+            70
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "DDMENU_STATIC",
+          "text": "Drag/Drop Menu",
+          "cls": "",
+          "style": "",
+          "rect": [
+            85,
+            57,
+            67,
+            56
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "ADMIN_STATIC",
+          "text": "Shell extension for all users.\r\n(For current user, open this setting as non-admin)",
+          "cls": "",
+          "style": "NOT WS_VISIBLE,WS_EX_STATICEDGE",
+          "rect": [
+            19,
+            29,
+            176,
+            21
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "USER_STATIC",
+          "text": "Shell extension of the current user. \r\n(For all users, open this setting as admin)",
+          "cls": "",
+          "style": "0,WS_EX_STATICEDGE",
+          "rect": [
+            32,
+            28,
+            150,
+            21
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "CTEXT",
+          "id": "DISABLE_STATIC",
+          "text": "FastEx64.dll / FastExt1.dll can't be\r\nloaded, so it can't install shell extension",
+          "cls": "",
+          "style": "NOT WS_VISIBLE,WS_EX_STATICEDGE",
+          "rect": [
+            37,
+            31,
+            137,
+            22
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SHEXT_CHK",
+          "text": "Enable",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            13,
+            14,
+            35,
+            10
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Shell Extension",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            178
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET9": {
+      "size": [
+        211,
+        215
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "LTEXT",
+          "id": "IDC_COMMENT",
+          "text": "If the FastCopy icon in the task tray (task notification area) is hidden, it is also displayed on the task bar.\r\nBy following the operation below, you can change the icon to be always displayed.",
+          "cls": "",
+          "style": "0,WS_EX_STATICEDGE",
+          "rect": [
+            14,
+            30,
+            170,
+            38
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "PLAY_BTN",
+          "text": "Play",
+          "cls": "",
+          "style": "BS_ICON",
+          "rect": [
+            69,
+            144,
+            18,
+            13
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "TASKBAR_CHECK",
+          "text": "Use taskbar instead of tasktray at minimizing",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            8,
+            17,
+            147,
+            9
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "At minimized",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            162
+          ]
+        }
+      ]
+    },
+    "SETUP_SHEET10": {
+      "size": [
+        208,
+        189
+      ],
+      "caption": "",
+      "font": 9,
+      "controls": [
+        {
+          "kind": "CONTROL",
+          "id": "UPDATE_CHK",
+          "text": "Update check at startup (if arg is not specified)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            18,
+            174,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "EXECCONFIRM_CHECK",
+          "text": "Confirm before executing",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            35,
+            114,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "DIRSEL_CHK",
+          "text": "Default action of \"Source\" button is Dir selection",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            52,
+            191,
+            10
+          ]
+        },
+        {
+          "kind": "LTEXT",
+          "id": "IDC_STATIC",
+          "text": "Info Update Span",
+          "cls": "",
+          "style": "",
+          "rect": [
+            11,
+            76,
+            58,
+            8
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SPAN1_RADIO",
+          "text": "250ms",
+          "cls": "Button",
+          "style": "BS_AUTORADIOBUTTON | WS_GROUP ",
+          "rect": [
+            79,
+            76,
+            34,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SPAN2_RADIO",
+          "text": "500ms",
+          "cls": "Button",
+          "style": "BS_AUTORADIOBUTTON ",
+          "rect": [
+            117,
+            76,
+            34,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "SPAN3_RADIO",
+          "text": "1000ms",
+          "cls": "Button",
+          "style": "BS_AUTORADIOBUTTON ",
+          "rect": [
+            157,
+            77,
+            37,
+            10
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "FINISH_CHECK",
+          "text": "Balloon Notification at Finish (if minimized)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            10,
+            92,
+            188,
+            13
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "PREVENTSLEEP_CHECK",
+          "text": "Prevent auto sleep during copying",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE | WS_TABSTOP ",
+          "rect": [
+            10,
+            110,
+            168,
+            9
+          ]
+        },
+        {
+          "kind": "CONTROL",
+          "id": "TEST_CHECK",
+          "text": "Add test creation mode (experiment/need to restart)",
+          "cls": "Button",
+          "style": "BS_AUTOCHECKBOX | WS_TABSTOP ",
+          "rect": [
+            10,
+            125,
+            188,
+            9
+          ]
+        },
+        {
+          "kind": "PUSHBUTTON",
+          "id": "HELP_BUTTON",
+          "text": "?",
+          "cls": "",
+          "style": "",
+          "rect": [
+            185,
+            10,
+            13,
+            13
+          ]
+        },
+        {
+          "kind": "GROUPBOX",
+          "id": "IDC_STATIC",
+          "text": "Misc Settings",
+          "cls": "",
+          "style": "",
+          "rect": [
+            3,
+            2,
+            201,
+            144
+          ]
+        }
+      ]
+    }
+  },
+  "menus": [
+    {
+      "label": "&File",
+      "children": [
+        {
+          "label": "&Open Log",
+          "id": "OPENLOG_MENUITEM"
+        },
+        {
+          "label": "Open &LastFileLog",
+          "id": "FILELOG_MENUITEM"
+        },
+        {
+          "label": "Open &FastCopy Dir",
+          "id": "OPENDIR_MENUITEM"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Save as Init &Pos",
+          "id": "FIXPOS_MENUITEM"
+        },
+        {
+          "label": "Save as Init &Size",
+          "id": "FIXSIZE_MENUITEM"
+        },
+        {
+          "label": "Always &Top Most",
+          "id": "TOPLEVEL_MENUITEM"
+        },
+        {
+          "label": "&Close",
+          "id": "CLOSE_MENUITEM"
+        }
+      ]
+    },
+    {
+      "label": "&JobMng",
+      "children": [
+        {
+          "label": "Add/Modify/Del &Job...",
+          "id": "JOB_MENUITEM"
+        },
+        {
+          "separator": true
+        }
+      ]
+    },
+    {
+      "label": "&Option",
+      "children": [
+        {
+          "label": "&Main Settings",
+          "id": "SETUP_MENUITEM"
+        },
+        {
+          "label": "&Font Settings",
+          "children": [
+            {
+              "label": "&Change Main Font",
+              "id": "FONT_MENUITEM"
+            },
+            {
+              "label": "&Reset Main Font",
+              "id": "RESETFONT_MENUITEM"
+            }
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "&Auto HDD mode",
+          "id": "AUTODISK_MENUITEM"
+        },
+        {
+          "label": "&Same HDD mode",
+          "id": "SAMEDISK_MENUITEM"
+        },
+        {
+          "label": "&Diff HDD mode",
+          "id": "DIFFDISK_MENUITEM"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "&Post-Proccess",
+          "children": [
+            {
+              "separator": true
+            },
+            {
+              "label": "&Add/Modify/Del...",
+              "id": "FINACT_MENUITEM"
+            }
+          ]
+        },
+        {
+          "label": "Show Extended &Filter",
+          "id": "EXTENDFILTER_MENUITEM"
+        },
+        {
+          "label": "S&wap Source<->DestDir",
+          "id": "SWAPTARGET_MENUITEM"
+        }
+      ]
+    },
+    {
+      "label": "&Help",
+      "children": [
+        {
+          "label": "&Help",
+          "id": "HELP_MENUITEM"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "&Check Update",
+          "id": "UPDCHECK_MENUITEM"
+        },
+        {
+          "label": "&Support Forum",
+          "id": "FCSUPPORTURL_MENUITEM"
+        },
+        {
+          "label": "&Latest Version",
+          "id": "FASTCOPYURL_MENUITEM"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "&About FastCopy",
+          "id": "ABOUT_MENUITEM"
+        }
+      ]
+    }
+  ],
+  "strings": {
+    "IDS_MKDIR": "Create",
+    "IDS_RMDIR": "Delete",
+    "IDS_SRC_SELECT": "Select source directory\r\n (OK with Ctrl-Key for addition)",
+    "IDS_DST_SELECT": "Select destination directory",
+    "IDS_SAMEDISK": "Same HDD mode",
+    "IDS_DIFFDISK": "Diff HDD mode",
+    "IDS_FIX_SAMEDISK": "Fix Same HDD",
+    "IDS_FIX_DIFFDISK": "Fix Diff HDD",
+    "IDS_COPY_NAME": "Diff (No overwrite)",
+    "IDS_COPY_ATTR": "Diff (Size/Date)",
+    "IDS_COPY_LASTEST": "Diff (Newer)",
+    "IDS_COPY_FORCE": "Copy (Overwrite)",
+    "IDS_SYNC_NAME": "Sync (No overwrite)",
+    "IDS_SYNC_ATTR": "Sync (Size/Date)",
+    "IDS_SYNC_LASTEST": "Sync (Newer)",
+    "IDS_SYNC_FORCE": "Sync (Overwrite)",
+    "IDS_MOVE_NAME": "Move (No overwrite)",
+    "IDS_MOVE_ATTR": "Move (Size/Date)",
+    "IDS_MOVE_LASTEST": "Move (Newer)",
+    "IDS_MOVE_FORCE": "Move (Overwrite)",
+    "IDS_DELETE": "Delete all",
+    "IDS_MUTUAL": "Sync (MutualNew)",
+    "IDS_EXECUTE": "Execute",
+    "IDS_CANCEL": "Cancel...",
+    "IDS_BEHAVIOR": "Behavior changes depending on whether or not there is \\ at the end of DestDir specification.\r\n(See Help for details)",
+    "IDS_FILESELECT": "To select\r\nFiles ...",
+    "IDS_DIRSELECT": "To select Directory ...",
+    "IDS_TEST": "Test Write",
+    "IDS_SAMEPATHERR": "Source and DestDir are identical.",
+    "IDS_PARENTPATHERR": "Can not move parent directory to child directory",
+    "IDS_MOVECONFIRM": "Moving",
+    "IDS_FASTCOPYURL": "https://fastcopy.jp/en/",
+    "IDS_FCSUPPORTURL": "https://groups.google.com/forum/#!forum/fastcopy-bb-eng",
+    "IDS_FASTCOPYHELP": "doc\\fastcopy.chm::/fastcopy_eng.htm",
+    "IDS_EXCEPTIONLOG": "An exception occured.\r\nThe exception info saved to \r\n %s\r\n %s.\r\n\r\nPlease send these files (with occurrence situation) to author.\r\n\r\nThe saved folder will be opened, if 'OK' is pushed.",
+    "IDS_SYNCCONFIRM": "Synchronizing",
+    "IDS_RESUME": "Resume",
+    "IDS_PAUSE": "Pause",
+    "IDS_BACKSLASHERR": "'\\' is missing after ':'. If you want to copy the contents of SourceDir to DestDir, append '*' to the end of SourceDir",
+    "IDS_ERRSTOP": "Can not continue",
+    "IDS_CONFIRMFORCEEND": "Do you want to force application termination?",
+    "IDS_STOPCONFIRM": "Do you want to stop copying?",
+    "IDS_DELSTOPCONFIRM": "Do you want to stop deleting?",
+    "IDS_DELCONFIRM": "Deleting",
+    "IDS_DUPCONFIRM": "Create duplicated files",
+    "IDS_LISTCONFIRM": "Do you want to stop listing?",
+    "IDS_JOBNAME": "JobName: <%s>",
+    "IDS_JOBNOTFOUND": "Specified Job can not be found",
+    "IDS_LISTING": "Listing",
+    "IDS_REQUIRE_ADMIN": "Administrator Privilege (Elevate) is required.",
+    "IDS_FIXPOS_MSG": "Do you want to save the current window position?",
+    "IDS_FIXSIZE_MSG": "Do you want to save the current window size?",
+    "IDS_ELEVATE": "&Elevate",
+    "IDS_SHUTDOWN_MSG": "Shutting down\r\n",
+    "IDS_STATUS_FONT": "Lucida Console",
+    "IDS_STATUS_FONTSIZE": "90",
+    "IDS_STATUS_ALTFONT": "Courier New",
+    "IDS_STATUS_ALTFONTSIZE": "80",
+    "IDS_FINACTNAME": "Post-Process Name: <%s>",
+    "IDS_FINACTMENU": "Post-Process (%s)",
+    "IDS_FINACT_NORMAL": "Normal",
+    "IDS_FINACT_SUSPEND": "Standby",
+    "IDS_HIBERNATE_MSG": "Entering hibernation mode.\r\n",
+    "IDS_SUSPEND_MSG": "Entering standby mode.\r\n",
+    "IDS_WAITPROC_MSG": "(Waiting for another running FastCopy...)",
+    "IDS_WAITTIME_MSG": "(Auto executing will be done in %2dsec)",
+    "IDS_DATEFORMAT_MSG": "Illegal date format.\r\nYYYYMMDD [HHMMSS] ex) 20090101\r\n-numberW|D|h|m|s     ex) -52W, -1D",
+    "IDS_SIZEFORMAT_MSG": "Illegal size format.\r\n number[K|M|G|T]  ex) 100, 1K, 100M",
+    "IDS_WAIT_MANYPROC": "Number of running FastCopy procs are limit.\r\nPlease wait for finish...\r\n\r\n(The limit value can be changed in \"settings\" -> \"parallel running\")",
+    "IDS_WAIT_ACQUIREDRV": "Another running fastcopy uses the same physical HDD\r\nPlease wait for finish...",
+    "IDS_FINACT_HIBERNATE": "Hibernate",
+    "IDS_FINACT_SHUTDOWN": "Shutdown",
+    "IDS_SMALLVAL_SETERR": "Value is too small.",
+    "IDS_BIGVAL_SETERR": "Value is too big.",
+    "IDS_SMALLBUF_SETERR": "The Buffer size is required more than twice value of Max I/O Size (%dMB or more)",
+    "IDS_BIGIO_SETERR": "Max I/O Size is requied less than half of the Buffer size.",
+    "IDS_DRVGROUP_SETERR": "Drive group format is illegal.",
+    "IDS_NETDRV_UNC": "Same UNC_share are same physical drive group",
+    "IDS_NETDRV_SVR": "Same UNC_server are same physical drive group",
+    "IDS_NETDRV_ALL": "All UNC_server are same physical drive group",
+    "IDS_UNDO": "&Undo",
+    "IDS_CUT": "Cu&t",
+    "IDS_COPY": "&Copy",
+    "IDS_PASTE": "&Paste",
+    "IDS_DEL": "&Delete",
+    "IDS_SELECTALL": "Select &All",
+    "IDS_SETUP_SHEET1": "Defaults",
+    "IDS_SETUP_SHEET2": "I/O Settings",
+    "IDS_SETUP_SHEET3": "Drive group",
+    "IDS_SETUP_SHEET4": "Parallel running",
+    "IDS_SETUP_SHEET5": "Copy/Move Options",
+    "IDS_SETUP_SHEET6": "Delete Options",
+    "IDS_SETUP_SHEET7": "Log Settings",
+    "IDS_SETUP_SHEET8": "Shell Extension",
+    "IDS_SETUP_SHEET9": "At minimized",
+    "IDS_SETUP_SHEET10": "Misc Settings",
+    "IDS_FACMD_ALWAYS": "Always",
+    "IDS_FACMD_NORMAL": "no error",
+    "IDS_FACMD_ERROR": "error",
+    "IDS_DLSVT_NONE": "Always disallow DST grace time",
+    "IDS_DLSVT_FAT": "Allow DST grace time(60min) with FAT",
+    "IDS_DLSVT_ALWAYS": "Always allow DST grace time(60min)",
+    "IDS_SPEEDTIP": "Speed Control (the left end is suspend)",
+    "IDS_LISTTIP": "Confirm the execution contents beforehand.",
+    "IDS_LISTVTIP": "Confirm the execution contents beforehand and Compare files to be skipped.",
+    "IDS_TOPTIP": "Main window always in front",
+    "IDS_UPDFMT_UPDMSG": "New version (v%s) was found.\r\nUpdate Now?",
+    "IDS_UPDFMT_UPDBUSY": "New version (v%s) was found.\r\n(It can't update due to running)",
+    "IDS_UPDFMT_NOTNEED": "Not need to update\r\n(%s -> %s)",
+    "IDS_SELECT": "Select",
+    "IDS_BUFSIZETIP": "Click to display the I/O settings."
+  }
+}
