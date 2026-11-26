@@ -1,6 +1,11 @@
-# FastCopy Mint 0.2.8 — Linux preview release
+# FastCopy Linux CLONE
 
-A Linux-native reimplementation of the main file-transfer modes of FastCopy 3.63, based on the supplied original archive (Git commit 7265544, February 2019). This is an independent GPLv3 project, not an official FastCopy Lab or RapidCopy release.
+**A Linux-native reimplementation of the main file-transfer modes of FastCopy 3.63. This is an independent GPLv3 project, not an official FastCopy release.**
+
+![FastCopy Screenshot1](screenshots/main_dialog.png)&nbsp;&nbsp;![FastCopy Screenshot2](screenshots/main_dialog_dark.png)<br>
+<p align="center">
+  <img src="screenshots/options.png" alt="Options Screenshot">
+</p>
 
 ## Install on Linux Mint Cinnamon or MATE
 
