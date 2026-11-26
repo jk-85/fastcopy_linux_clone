@@ -4,6 +4,12 @@ A Linux-native reimplementation of the main file-transfer modes of FastCopy 3.63
 
 ## Install on Linux Mint Cinnamon or MATE
 
+### Stable main menu (+menu1)
+
+- File, JobMng, Option and Help now use a fixed-height, in-window menu bar instead of the X11 native Tk menubar. Moving the pointer across a closed menu bar changes only its highlight. When a dropdown is open, hovering over a different heading switches once; movement within the same heading does not repost it.
+- Existing menu commands, nested menus, job management, check/radio items, F10, Alt mnemonics and arrow/Escape navigation are retained. The saved window geometry remains in the previous client-area format, so existing window sizes are preserved. The GUI supports both light and dark themes without new runtime dependencies.
+- Mouse/keyboard regression tests passed in Xvfb/Openbox. The reported flicker on an actual Mint desktop could not be directly reproduced or verified here.
+
 ### Keyboard navigation in folder pickers (+typeahead1)
 
 - Source, Add Directory and DestDir open with keyboard focus in the folder list. Type the first letter to select and scroll to a matching folder; type further characters within one second for case-insensitive prefix matching. Repeating the initial letter cycles through matching folders. A pause starts a new search. The search stays within the currently displayed directory.
@@ -60,7 +66,7 @@ The tray regression uses an isolated X11 display and a real window manager. With
 
 ### Static-engine compatibility package 0.2.8+static1+launcher1+tray1
 
-Install with `sudo apt install ./fastcopy-mint_0.2.8+static1+launcher1+tray1+command1+listing1+tray2+typeahead1_amd64.deb`. The CLI links glibc, libstdc++ and libgcc into its executable; its ELF headers contain no dynamic interpreter or shared-library dependencies. The GUI uses the host Python 3 and Tk packages plus GTK 3 for the tray helper. This eliminates the reported Mint 21.x glibc/libstdc++ ABI dependency mismatch. Mint 21.x and 22.x AMD64 compatibility is expected, not verified on a real Mint desktop. The static runtime must be rebuilt for library security updates. See `STATIC-BUILD.md` for the source/relink notices.
+Install with `sudo apt install ./fastcopy-mint_0.2.8+static1+launcher1+tray1+command1+listing1+tray2+typeahead1+menu1_amd64.deb`. The CLI links glibc, libstdc++ and libgcc into its executable; its ELF headers contain no dynamic interpreter or shared-library dependencies. The GUI uses the host Python 3 and Tk packages plus GTK 3 for the tray helper. This eliminates the reported Mint 21.x glibc/libstdc++ ABI dependency mismatch. Mint 21.x and 22.x AMD64 compatibility is expected, not verified on a real Mint desktop. The static runtime must be rebuilt for library security updates. See `STATIC-BUILD.md` for the source/relink notices.
 
 To build this variant locally: `FASTCOPY_STATIC=1 ./build-deb.sh` (after installing the build prerequisites below). To install from source in static mode: `FASTCOPY_STATIC=1 ./install.sh`. A regular local dynamic build remains preferable for routine system-library security updates. See `STATIC-BUILD.md` for the static library versions, source and relinking notes.
 

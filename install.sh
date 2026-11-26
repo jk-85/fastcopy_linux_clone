@@ -19,7 +19,7 @@ trap 'rm -rf -- "$local_build"' EXIT
 FASTCOPY_BUILD_DIR="$local_build" ./build-deb.sh
 version=0.2.8
 if [[ ${FASTCOPY_STATIC:-0} == 1 ]]; then version+=+static1; fi
-version+=+launcher1+tray1+command1+listing1+tray2+typeahead1
+version+=+launcher1+tray1+command1+listing1+tray2+typeahead1+menu1
 sudo apt install -y "./dist/fastcopy-mint_${version}_$(dpkg --print-architecture).deb"
 fastcopy-mint-integrate
 printf '\nInstalled. Open FastCopy from the application menu or run fastcopy.\n'

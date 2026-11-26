@@ -309,3 +309,19 @@ PASS: existing multisource, destination, GUI layout and Listing/Execute
 PASS: all 23 original C++ engine tests as a regular user.
 The folder-only restriction remains; no new dependencies, layout resource,
 tray or copy engine changes. Native Cinnamon/MATE sessions not retested.
+
+=== Stable main menu 0.2.8+static1+launcher1+tray1+command1+listing1+tray2+typeahead1+menu1 ===
+PASS: real XTest mouse and keyboard events in Xvfb/Openbox (standard WM
+  config), light and dark: stable hover geometry, no repeated Enter/Leave,
+  no automatic posting on closed-bar hover, switching open menus once,
+  no repost within same heading, About command, Alt mnemonics, F10, arrow
+  traversal, Escape, operation state and extended-filter action. Legacy
+  saved content-area geometry preserved. The container's custom Openbox
+  config forces all windows maximized, so standard config was used.
+PASS: GUI layout (light and dark), GUI fixes, destination, multisource,
+  theme GUI, listing/execute, tray and all 23 engine tests (regular user).
+PASS: typeahead suite in Xvfb/Openbox (its supported test setup); an earlier
+  WM-less run failed the Add Directory initial-focus assertion.
+The reported native Mint flicker was not reproduced on an actual Cinnamon
+or MATE session; the native X11 menubar was replaced as a targeted workaround.
+Original static executable, tray helper, resources and dependencies unchanged.
