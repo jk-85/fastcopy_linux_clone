@@ -10,6 +10,7 @@ import ctypes as C
 import json
 import os
 import queue
+import re
 import shutil
 import signal
 import subprocess
@@ -751,11 +752,20 @@ class App:
         self.ui.frame.bind('<Configure>',self.resize);self.root.attributes('-topmost',self.top.get());self.root.after(50,self.poll)
         self.tray = TrayController(root)
 
-    def size(self):return (px(231),py(319 if self.extended.get() else 292))
+    def content_size(self):return (px(231),py(319 if self.extended.get() else 292))
+    def size(self):
+        w,h=self.content_size();return w,h+self.menu_height
+    def menu_geometry(self, geometry, offset):
+        # Preserve the saved client-area geometry format of the older native
+        # menubar, which Tk excluded from wm geometry on X11.
+        match=re.fullmatch(r'(=?\d+x)(\d+)((?:[+-]\d+){0,2})',geometry)
+        if match:
+            return f'{match[1]}{max(1,int(match[2])+offset)}{match[3]}'
+        return geometry
     def set_geometry(self,initial=False):
         w,h=self.size();self.root.minsize(w,h)
         if initial:
-            saved=self.cfg.get('geometry','');self.root.geometry(saved if isinstance(saved,str) and saved else f'{w}x{h}')
+            saved=self.cfg.get('geometry','');self.root.geometry(self.menu_geometry(saved,self.menu_height) if isinstance(saved,str) and saved else f'{w}x{h}')
         else:self.root.geometry(f'{max(w,self.ui.frame.winfo_width())}x{h}')
         self.layout_main()
     def resize(self,event):
@@ -783,7 +793,7 @@ class App:
         if self.proc:
             active='PAUSELIST_BTN' if self.dry else 'PAUSEOK_BTN';hidden.discard(active);self.ui.force_visible.add(active)
         # Original right-anchored controls, width-fitting editors, extended filter collapse.
-        dw=max(0,(self.ui.frame.winfo_width()-px(231))/SX);dh=max(0,(self.ui.frame.winfo_height()-self.size()[1])/SY)
+        dw=max(0,(self.ui.frame.winfo_width()-px(231))/SX);dh=max(0,(self.ui.frame.winfo_height()-self.content_size()[1])/SY)
         # Reserve a readable minimum for both log panes. Store pixels so dragging
         # follows the pointer without accumulating dialog-unit rounding errors.
         rects={c['id']:c['rect'] for c in self.ui.spec['controls']}
@@ -834,7 +844,11 @@ class App:
                 elif c['id']!=pauseid and c['id'] in ('PAUSEOK_BTN','PAUSELIST_BTN'):w.place_forget()
 
     def create_menu(self):
-        menu=tk.Menu(self.root,tearoff=False);self.menus={};self.jobmenu=None
+        # A regular, fixed-height client-area bar avoids Tk's X11 native
+        # menubar cloning/redrawing path. Keep Tk's real popup menus and
+        # standard Menubutton bindings (mouse, F10, Alt, arrows and Escape).
+        self.menu_bar=tk.Frame(self.root,bg=self.bg,bd=0,highlightthickness=0)
+        self.menu_buttons=[];self.menus={};self.jobmenu=None
         actions={'OPENLOG_MENUITEM':lambda:self.open_log(False),'FILELOG_MENUITEM':lambda:self.open_log(True),'OPENDIR_MENUITEM':lambda:self.open_dir(CONFIG_DIR),'FIXPOS_MENUITEM':self.save_pos,'FIXSIZE_MENUITEM':self.save_pos,'CLOSE_MENUITEM':self.close,'JOB_MENUITEM':self.job_dialog,'SETUP_MENUITEM':self.settings,'FONT_MENUITEM':self.font_dialog,'RESETFONT_MENUITEM':self.reset_font,'FINACT_MENUITEM':self.post_process,'SWAPTARGET_MENUITEM':self.swap,'HELP_MENUITEM':self.help,'FCSUPPORTURL_MENUITEM':lambda:webbrowser.open(STRINGS['IDS_FCSUPPORTURL']),'FASTCOPYURL_MENUITEM':lambda:webbrowser.open(STRINGS['IDS_FASTCOPYURL']),'ABOUT_MENUITEM':self.about}
         def fill(m,items):
             for item in items:
@@ -853,7 +867,36 @@ class App:
                     m.add_radiobutton(label=label,underline=u,variable=self.disk,value={'AUTODISK_MENUITEM':'auto','SAMEDISK_MENUITEM':'same','DIFFDISK_MENUITEM':'diff'}[i],command=self.disk_changed)
                 else:m.add_command(label=label,underline=u,command=actions.get(i),state='normal' if i in actions else 'disabled')
                 self.menus[i]=(m,m.index('end'))
-        self._normal_action=tk.StringVar(value='Normal');fill(menu,RESOURCE['menus']);self.root.configure(menu=menu);self.update_job_menu()
+        self._normal_action=tk.StringVar(value='Normal')
+        for item in RESOURCE['menus']:
+            label=item['label'];underline=label.find('&');label=label.replace('&','')
+            button=tk.Menubutton(self.menu_bar,text=label,underline=underline,
+                font=('Liberation Sans',-12),bg=self.bg,fg=self.palette['fg'],
+                activebackground=self.palette['active'],activeforeground=self.palette['fg'],
+                relief='flat',bd=1,highlightthickness=0,padx=6,pady=2,
+                indicatoron=False,direction='below',cursor='arrow')
+            child=tk.Menu(button,tearoff=False);button.configure(menu=child)
+            fill(child,item['children'])
+            if label=='JobMng':self.jobmenu=child
+            button.bind('<Motion>',self.menu_hover,add='+')
+            button.pack(side='left',fill='y');self.menu_buttons.append(button)
+        self.menu_height=max(button.winfo_reqheight() for button in self.menu_buttons)
+        self.menu_bar.configure(height=self.menu_height)
+        self.menu_bar.pack_propagate(False)
+        self.menu_bar.pack(side='top',fill='x',before=self.ui.frame)
+        self.update_job_menu()
+    def menu_hover(self,event):
+        # With one menu posted, preserve normal menubar hover switching. The
+        # posted button has the grab, so resolve the real pointer location.
+        # Never repost the current menu or open menus during ordinary hover.
+        posted=str(self.root.tk.call('set','::tk::Priv(postedMb)'))
+        if not posted:return
+        button=self.root.winfo_containing(event.x_root,event.y_root)
+        if button not in self.menu_buttons or str(button)==posted:return
+        self.root.tk.call('tk::MbEnter',str(button))
+        self.root.tk.call('tk::MbPost',str(button),event.x_root,event.y_root)
+        self.root.tk.call('tk::MenuFirstEntry',button.cget('menu'))
+        return 'break'
     def update_job_menu(self):
         if self.jobmenu is None:return
         if self.jobmenu.index('end') is not None and self.jobmenu.index('end')>=2:self.jobmenu.delete(2,'end')
@@ -865,7 +908,7 @@ class App:
     def save_config(self):
         try:write_json(CONFIG_DIR/'settings.json',self.cfg)
         except OSError as e:self.message(str(e))
-    def save_pos(self):self.cfg['geometry']=self.root.geometry();self.save_config()
+    def save_pos(self):self.cfg['geometry']=self.menu_geometry(self.root.geometry(),-self.menu_height);self.save_config()
     def reset_font(self):self.root.option_add('*Font',('Liberation Sans',-12));self.ui.controls['STATUS_EDIT'].configure(font=('Liberation Mono',-12))
     def font_dialog(self):
         size=simpledialog.askinteger('Change Main Font','Status font size (pixels)',parent=self.root,initialvalue=12,minvalue=8,maxvalue=18)
