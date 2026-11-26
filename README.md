@@ -2,8 +2,9 @@
 
 **A Linux-native reimplementation of the main file-transfer modes of FastCopy 3.63. This is an independent GPLv3 project, not an official FastCopy release.**
 
-![FastCopy Screenshot1](screenshots/main_dialog.png)&nbsp;&nbsp;![FastCopy Screenshot2](screenshots/main_dialog_dark.png)<br>
 <p align="center">
+  <img src="screenshots/main_dialog.png" alt="Main dialog Screenshot">
+  <img src="screenshots/main_dialog_dark.png" alt="Main dialog dark Screenshot">
   <img src="screenshots/options.png" alt="Options Screenshot">
 </p>
 
