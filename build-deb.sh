@@ -9,7 +9,7 @@ case "${FASTCOPY_STATIC:-0}" in
     1) static=ON; version+=+static1 ;;
     *) echo 'FASTCOPY_STATIC must be 0 or 1' >&2; exit 2 ;;
 esac
-version+=+launcher1+tray1+command1+listing1+tray2+typeahead1
+version+=+launcher1+tray1+command1+listing1+tray2+typeahead1+menu1
 build="${FASTCOPY_BUILD_DIR:-$root/build}"
 mkdir -p "$build"
 arch=$(dpkg --print-architecture)
