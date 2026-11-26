@@ -1,6 +1,7 @@
 # FastCopy Linux CLONE
 
-**A Linux-native reimplementation of the main file-transfer modes of FastCopy 3.63. This is an independent GPLv3 project, not an official FastCopy release.**
+**A Linux-native reimplementation of the main file-transfer modes of FastCopy 3.63. This is an independent GPLv3 project, not an official FastCopy release.**<br><br>
+Tested mainly on Linux Mint MATE and Cinnamon.
 
 <p align="center">
   <img src="screenshots/main_dialog.png" alt="Main dialog Screenshot">
